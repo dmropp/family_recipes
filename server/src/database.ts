@@ -5,8 +5,8 @@ export const collections: {
     employees?: mongodb.Collection<Employee>;
 } = {};
 
-export async function connectToDatabase(url: string) {
-    const client = new mongodb.MongoClient(url);
+export async function connectToDatabase(uri: string) {
+    const client = new mongodb.MongoClient(uri);
     await client.connect();
 
     const db = client.db("meanStackExample");
